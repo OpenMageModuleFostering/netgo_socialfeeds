@@ -1,6 +1,9 @@
 <?php
 require_once "base_facebook.php";
-
+/**
+* Extends the BaseFacebook class with the intent of using
+* PHP sessions to store user ids and access tokens.
+*/
 class Facebook extends BaseFacebook{
 	
 	const FBSS_COOKIE_NAME = 'fbss'; 
@@ -8,7 +11,12 @@ class Facebook extends BaseFacebook{
 	protected $sharedSessionID;
 	protected static $kSupportedKeys = array('state', 'code', 'access_token', 'user_id');	
 	
-	
+	/**
+	* Identical to the parent constructor, except that
+	* we start a PHP session to store the user ID and
+	* access token if during the course of execution
+	* we discover them.
+	*/
 	public function __construct($config) {
 		if (!session_id()) {
 			@session_start();
@@ -46,7 +54,12 @@ class Facebook extends BaseFacebook{
 			); 
 		}
 	} 
-	
+	/**
+	* Provides the implementations of the inherited abstract
+	* methods.  The implementation uses PHP sessions to maintain
+	* a store for authorization codes, user ids, CSRF states, and
+	* access tokens.
+	*/
 	protected function setPersistentData($key, $value) {
 		if (!in_array($key, self::$kSupportedKeys)) {
 			self::errorLog('Unsupported key passed to setPersistentData.');
@@ -97,5 +110,8 @@ class Facebook extends BaseFacebook{
 	}
 }
 
+/**
+* Set the user credentials 
+*/ 
 
  

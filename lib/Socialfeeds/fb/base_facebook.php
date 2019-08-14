@@ -1,14 +1,18 @@
 <?php
-/***************************************
- *** Social Feeds ***
- ***************************************
+/**
+ * Copyright 2011 Facebook, Inc.
  *
- * @copyright   Copyright (c) 2015
- * @company     NetAttingo Technologies
- * @package     Netgo_Socialfeeds
- * @author 		NetGo
- * @dev			netattingomails@gmail.com
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
  *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
  */
 
 if (!function_exists('curl_init')) {
@@ -21,7 +25,7 @@ if (!function_exists('json_decode')) {
 /**
  * Thrown when an API call returns an exception.
  *
- * @author NetGo
+ * @author Naitik Shah <naitik@facebook.com>
  */
 class FacebookApiException extends Exception
 {
@@ -30,7 +34,11 @@ class FacebookApiException extends Exception
    */
   protected $result;
 
- 
+  /**
+   * Make a new API Exception with the given result.
+   *
+   * @param array $result The result from the API server
+   */
   public function __construct($result) {
     $this->result = $result;
 
@@ -105,7 +113,7 @@ class FacebookApiException extends Exception
  * implement the four abstract methods listed at the bottom of
  * the file.
  *
- * @author NetGo
+ * @author Naitik Shah <naitik@facebook.com>
  */
 abstract class BaseFacebook
 {
@@ -129,7 +137,10 @@ abstract class BaseFacebook
     CURLOPT_USERAGENT      => 'facebook-php-3.2',
   );
 
-  
+  /**
+   * List of query parameters that get automatically dropped when rebuilding
+   * the current URL.
+   */
   protected static $DROP_QUERY_PARAMS = array(
     'code',
     'state',
@@ -288,7 +299,12 @@ abstract class BaseFacebook
     return $this->appSecret;
   }
 
-  
+  /**
+   * Set the file upload support status.
+   *
+   * @param boolean $fileUploadSupport The file upload support status.
+   * @return BaseFacebook
+   */
   public function setFileUploadSupport($fileUploadSupport) {
     $this->fileUploadSupport = $fileUploadSupport;
     return $this;
@@ -303,18 +319,35 @@ abstract class BaseFacebook
     return $this->fileUploadSupport;
   }
 
-  
+  /**
+   * DEPRECATED! Please use getFileUploadSupport instead.
+   *
+   * Get the file upload support status.
+   *
+   * @return boolean true if and only if the server supports file upload.
+   */
   public function useFileUploadSupport() {
     return $this->getFileUploadSupport();
   }
 
-  
+  /**
+   * Sets the access token for api calls.  Use this if you get
+   * your access token by other means and just want the SDK
+   * to use it.
+   *
+   * @param string $access_token an access token.
+   * @return BaseFacebook
+   */
   public function setAccessToken($access_token) {
     $this->accessToken = $access_token;
     return $this;
   }
 
-
+  /**
+   * Extend an access token, while removing the short-lived token that might
+   * have been generated via client-side flow. Thanks to http://bit.ly/b0Pt0H
+   * for the workaround.
+   */
   public function setExtendedAccessToken() {
     try {
       // need to circumvent json_decode by calling _oauthRequest

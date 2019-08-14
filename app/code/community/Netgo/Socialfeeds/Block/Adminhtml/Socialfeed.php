@@ -15,23 +15,28 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Socialfeed view block
+ * Socialfeed admin block
  *
  * @category    Netgo
  * @package     Netgo_Socialfeeds
  * @author      Ultimate Module Creator
  */
-class Netgo_Socialfeeds_Block_Socialfeed_View extends Mage_Core_Block_Template
+class Netgo_Socialfeeds_Block_Adminhtml_Socialfeed extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
     /**
-     * get the current socialfeed
+     * constructor
      *
      * @access public
-     * @return mixed (Netgo_Socialfeeds_Model_Socialfeed|null)
+     * @return void
      * @author Ultimate Module Creator
      */
-    public function getCurrentSocialfeed()
+    public function __construct()
     {
-        return Mage::registry('current_socialfeed');
+        $this->_controller         = 'adminhtml_socialfeed';
+        $this->_blockGroup         = 'netgo_socialfeeds';
+        parent::__construct();
+        $this->_headerText         = Mage::helper('netgo_socialfeeds')->__('Socialfeed');
+        $this->_updateButton('add', 'label', Mage::helper('netgo_socialfeeds')->__('Add Socialfeed'));
+
     }
 }

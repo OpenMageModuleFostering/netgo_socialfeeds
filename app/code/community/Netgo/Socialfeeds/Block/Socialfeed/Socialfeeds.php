@@ -1,14 +1,25 @@
 <?php
-/***************************************
- *** Social Feeds ***
- ***************************************
+/**
+ * Netgo_Socialfeeds extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Netgo
+ * @package        Netgo_Socialfeeds
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Socialfeed view block
  *
- * @copyright   Copyright (c) 2015
- * @company     NetAttingo Technologies
+ * @category    Netgo
  * @package     Netgo_Socialfeeds
- * @author 		NetGo
- * @dev			netattingomails@gmail.com
- *
+ * @author      Ultimate Module Creator
  */
 $lib_path = Mage::getBaseDir('lib');
 require_once $lib_path."/Socialfeeds/fb/facebook.php";
@@ -25,7 +36,7 @@ class Netgo_Socialfeeds_Block_Socialfeed_Socialfeeds extends Mage_Core_Block_Tem
      *
      * @access public
      * @return string
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
 	public function _construct()
     {
@@ -40,7 +51,7 @@ class Netgo_Socialfeeds_Block_Socialfeed_Socialfeeds extends Mage_Core_Block_Tem
      *
      * @access public
      * @return mixed (Netgo_Socialfeeds_Model_Socialfeed|null)
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function getCurrentSocialfeed()
     {

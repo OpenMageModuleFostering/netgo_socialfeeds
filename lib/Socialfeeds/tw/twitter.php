@@ -29,7 +29,11 @@ class TwitterAPIExchange
         $this->consumer_key = $settings['consumer_key'];
         $this->consumer_secret = $settings['consumer_secret'];
     }    
-	
+	/**
+	* Set postfields array, example: array('screen_name' => 'J7mbo')
+	* @param array $array Array of parameters to send to API
+	* @return TwitterAPIExchange Instance of self for method chaining
+	*/
     public function setPostfields(array $array){
 		
         if (!is_null($this->getGetfield())){
@@ -41,7 +45,11 @@ class TwitterAPIExchange
         $this->postfields = $array;        
         return $this;
     }    
-	
+	/**
+	* Set getfield string, example: '?screen_name=J7mbo'
+	* @param string $string Get key and value pairs as string
+	* @return \TwitterAPIExchange Instance of self for method chaining
+	*/
     public function setGetfield($string){
 		
         if (!is_null($this->getPostfields())){
@@ -53,15 +61,25 @@ class TwitterAPIExchange
         $this->getfield = $string;        
         return $this;
     }    
-	
+	/**
+	* Get getfield string (simple getter)
+	* @return string $this->getfields
+	*/
     public function getGetfield(){
         return $this->getfield;
     }    
-	
+	/**
+	* Get postfields array (simple getter)
+	* @return array $this->postfields
+	*/
     public function getPostfields(){
         return $this->postfields;
     }    
-	
+	/**
+	* @param string $url The API url to use. Example: https://api.twitter.com/1.1/search/tweets.json
+	* @param string $requestMethod Either POST or GET
+	* @return \TwitterAPIExchange Instance of self for method chaining
+	*/
     public function buildOauth($url, $requestMethod){
         if (!in_array(strtolower($requestMethod), array('post', 'get'))){
             throw new Exception('Request method must be either POST or GET');
@@ -98,7 +116,9 @@ class TwitterAPIExchange
         return $this;
     }
     
-	
+	/**
+	* Perform the acual data retrieval from the API
+	*/
     public function performRequest($return = true){
 		
         if (!is_bool($return)){
@@ -129,7 +149,10 @@ class TwitterAPIExchange
 		}
     }
 		
-	
+	/**
+	* Private method to generate the base string used by cURL
+	* @return string Built base string
+	*/
     private function buildBaseString($baseURI, $method, $params){
         $return = array();
         ksort($params);        
@@ -139,7 +162,9 @@ class TwitterAPIExchange
         return $method . "&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $return));
     }
     
-	
+	/**
+	* Private method to generate authorization header used by cURL
+	*/
     private function buildAuthorizationHeader($oauth){
         $return = 'Authorization: OAuth ';
         $values = array();        

@@ -1,14 +1,25 @@
 <?php
-/***************************************
- *** Social Feeds ***
- ***************************************
+/**
+ * Netgo_Socialfeeds extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Netgo
+ * @package        Netgo_Socialfeeds
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Socialfeed collection resource model
  *
- * @copyright   Copyright (c) 2015
- * @company     NetAttingo Technologies
+ * @category    Netgo
  * @package     Netgo_Socialfeeds
- * @author 		NetGo
- * @dev			netattingomails@gmail.com
- *
+ * @author      Ultimate Module Creator
  */
 class Netgo_Socialfeeds_Model_Resource_Socialfeed_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
@@ -19,7 +30,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed_Collection extends Mage_Core_M
      *
      * @access public
      * @return void
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function _construct()
     {
@@ -35,7 +46,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed_Collection extends Mage_Core_M
      * @param string $labelField
      * @param array $additional
      * @return array
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function _toOptionArray($valueField='entity_id', $labelField='socialfeeds_status', $additional=array())
     {
@@ -49,7 +60,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed_Collection extends Mage_Core_M
      * @param string $valueField
      * @param string $labelField
      * @return array
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function _toOptionHash($valueField='entity_id', $labelField='socialfeeds_status')
     {
@@ -62,7 +73,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed_Collection extends Mage_Core_M
      *
      * @access public
      * @return Varien_Db_Select
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function getSelectCountSql()
     {

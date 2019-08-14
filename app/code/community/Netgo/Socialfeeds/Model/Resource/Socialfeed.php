@@ -1,14 +1,25 @@
 <?php
-/***************************************
- *** Social Feeds ***
- ***************************************
+/**
+ * Netgo_Socialfeeds extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Netgo
+ * @package        Netgo_Socialfeeds
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Socialfeed resource model
  *
- * @copyright   Copyright (c) 2015
- * @company     NetAttingo Technologies
+ * @category    Netgo
  * @package     Netgo_Socialfeeds
- * @author 		NetGo
- * @dev			netattingomails@gmail.com
- *
+ * @author      Ultimate Module Creator
  */
 class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resource_Db_Abstract
 {
@@ -17,7 +28,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * constructor
      *
      * @access public
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function _construct()
     {
@@ -32,7 +43,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @param int $storeId
      * @param bool $active
      * @return mixed
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function checkUrlKey($urlKey, $storeId, $active = true)
     {
@@ -54,7 +65,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @access public
      * @param Mage_Core_Model_Abstract $object
      * @return bool
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function getIsUniqueUrlKey(Mage_Core_Model_Abstract $object)
     {
@@ -79,7 +90,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @access public
      * @param Mage_Core_Model_Abstract $object
      * @return bool
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function isNumericUrlKey(Mage_Core_Model_Abstract $object)
     {
@@ -92,7 +103,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @access public
      * @param Mage_Core_Model_Abstract $object
      * @return bool
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function isValidUrlKey(Mage_Core_Model_Abstract $object)
     {
@@ -105,7 +116,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @access public
      * @param string $str
      * @return string
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     public function formatUrlKey($str)
     {
@@ -122,7 +133,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @param string $urlKey
      * @param array $store
      * @return Zend_Db_Select
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function _initCheckUrlKeySelect($urlKey, $store)
     {
@@ -137,7 +148,7 @@ class Netgo_Socialfeeds_Model_Resource_Socialfeed extends Mage_Core_Model_Resour
      * @access protected
      * @param $object
      * @return Netgo_Socialfeeds_Model_Resource_Socialfeed
-     * @author NetGo
+     * @author Ultimate Module Creator
      */
     protected function _beforeSave(Mage_Core_Model_Abstract $object)
     {

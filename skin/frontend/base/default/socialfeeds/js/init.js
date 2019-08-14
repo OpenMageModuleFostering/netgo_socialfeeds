@@ -1,14 +1,4 @@
-/***************************************
- *** Social Feeds ***
- ***************************************
- *
- * @copyright   Copyright (c) 2015
- * @company     NetAttingo Technologies
- * @package     Netgo_Socialfeeds
- * @author 		NetGo
- * @dev			netattingomails@gmail.com
- *
- */
+
 //Init the popup for instagram images only
 jQuery(document).ready(function(){
 	jQuery(".popup").popup({
