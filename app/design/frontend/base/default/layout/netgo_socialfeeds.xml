@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Social Feeds ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Socialfeeds
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+-->
+<layout>
+    <default>
+		<block type="netgo_socialfeeds/socialfeed_socialfeeds" name="socialfeed_view" template="netgo_socialfeeds/socialfeed/socialfeeds.phtml" />
+        <reference name="left">
+          
+ <action method="append" ifconfig="netgo_socialfeeds/socialfeed/mod_status_left">
+ <block>socialfeed_view</block>
+    </action>  
+        </reference>
+
+		<reference name="right">
+            
+		 <action method="append" ifconfig="netgo_socialfeeds/socialfeed/mod_status_right">
+		 <block>socialfeed_view</block>
+			</action>
+        </reference>
+		
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>socialfeeds/js/popup2.2.js</name>
+				<params/>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>socialfeeds/js/scroller/jquery.mCustomScrollbar.concat.min.js</name>
+				<params/>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>socialfeeds/js/init.js</name>
+				<params/>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>socialfeeds/css/front-style.css</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>socialfeeds/js/scroller/jquery.mCustomScrollbar.css</name>
+			</action>
+		</reference> 
+    </default>
+	
+	
+    <netgo_socialfeeds_socialfeed_index translate="label" module="netgo_socialfeeds">
+        <label>Socialfeeds list</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="netgo_socialfeeds/socialfeed_list" name="socialfeed_list" template="netgo_socialfeeds/socialfeed/list.phtml" />
+        </reference>
+    </netgo_socialfeeds_socialfeed_index>
+    <netgo_socialfeeds_socialfeed_view translate="label" module="netgo_socialfeeds">
+        <label>Socialfeed view page</label>
+        <update handle="page_two_columns_left" />
+        <reference name="content">
+            <block type="netgo_socialfeeds/socialfeed_view" name="socialfeed_view" template="netgo_socialfeeds/socialfeed/view.phtml" />
+        </reference>
+    </netgo_socialfeeds_socialfeed_view>
+</layout>

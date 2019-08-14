@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Social Feeds ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Socialfeeds
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+                                        <title>Socialfeeds</title>
+                                    </netgo_socialfeeds>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+                        <title>Social Feeds</title>
+                        <children>
+                            <socialfeed translate="title" module="netgo_socialfeeds">
+                                <title>Socialfeed</title>
+                                <sort_order>0</sort_order>
+                            </socialfeed>
+                        </children>
+                    </netgo_socialfeeds>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <!--<menu>
+        <netgo_socialfeeds translate="title" module="netgo_socialfeeds">
+            <title>Social Feeds</title>
+            <sort_order>37</sort_order>
+            <children>
+                <socialfeed translate="title" module="netgo_socialfeeds">
+                    <title>Socialfeed</title>
+                    <action>adminhtml/socialfeeds_socialfeed</action>
+                    <sort_order>0</sort_order>
+                </socialfeed>
+            </children>
+        </netgo_socialfeeds>
+    </menu>-->
+</config>

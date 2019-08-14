@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/***************************************
+ *** Social Feeds ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Socialfeeds
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+-->
+<config>
+    <modules>
+        <Netgo_Socialfeeds>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core />
+             </depends>
+        </Netgo_Socialfeeds>
+    </modules>
+</config>

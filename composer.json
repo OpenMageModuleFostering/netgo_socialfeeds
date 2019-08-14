@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Netgo_Socialfeeds",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": "This extension helps to display latest feeds from Facebook, twitter,Instagram, Pinterest and YouTube with tabs using a widget.",
+    "authors": [
+    {
+        "name": "NetGo",
+        "email": "netattingomails@gmail.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

@@ -1,0 +1,25 @@
+<?php
+/***************************************
+ *** Social Feeds ***
+ ***************************************
+ *
+ * @copyright   Copyright (c) 2015
+ * @company     NetAttingo Technologies
+ * @package     Netgo_Socialfeeds
+ * @author 		NetGo
+ * @dev			netattingomails@gmail.com
+ *
+ */
+?>
+<?php $_socialfeed = $this->getCurrentSocialfeed();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title socialfeed-title">
+    <h1><?php echo $_socialfeed->getSocialfeedsStatus(); ?></h1>
+</div>
+<div class="socialfeed-view">
+    <div class="socialfeed-socialfeeds_status">
+        <?php echo Mage::helper('netgo_socialfeeds')->__('Socialfeeds Status');?>:<?php echo $_socialfeed->getSocialfeedsStatus();?>
+
+    </div>
+
+</div>
