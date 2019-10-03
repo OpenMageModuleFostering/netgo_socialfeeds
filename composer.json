@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Netgo_Socialfeeds",
+    "name": "openmage-module-fostering\/netgo_socialfeeds",
     "type": "magento-module",
-    "license": "Open-Software-License-(OSL)",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "his extension helps to display latest feeds from Facebook, Twitter, Instagram, Pinterest and YouTube",
     "authors": [
